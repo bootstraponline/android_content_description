@@ -10,11 +10,10 @@ count = 0
 Dir.glob dir do | xml |
   xml  = File.expand_path xml
   data = Nokogiri::XML File.read(xml), nil, 'UTF-8'
+  changed = false
 
   # If there's a hint, use that for content desc.
   hints = data.xpath '//*[@android:hint]'
-  
-  changed = false
 
   hints.each do | hint |
     changed = true
