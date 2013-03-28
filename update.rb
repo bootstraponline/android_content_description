@@ -19,8 +19,6 @@ Dir.glob dir do | xml |
 
   # If there's a hint, use that for content desc.
   hints = data.xpath '//*[@android:hint]'
-  
-  changed = false
 
   hints.each do | hint |
     existing = hint.attr(desc)
